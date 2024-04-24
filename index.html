@@ -1,0 +1,111 @@
+<html>
+
+	<head>
+	
+		<title>Register Form</title>
+		
+		<link rel="icon" href="img/5.jpg">
+		
+		<link rel="stylesheet" href="css/style.css">
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>	
+	
+	</head>
+	
+	<body>
+	
+		<center>
+	
+		<h1>Register Form</h1>
+		
+		<tr>
+		
+		<form>
+		
+			<table>
+			
+				<tr>
+				
+					<td>Name :</td>
+					
+					<td><input type="text" placeholder="Enter the Name"></td>
+				</tr>
+				
+				<tr>
+				
+					<td>Choose the Location :</td>
+					
+					<td>
+						<select id="location" disabled>
+							<option>Chennai</option>
+							<option>Madurai</option>
+							<option>Coimbatore</option>
+							<option>Trichy</option>
+							<option>Erode</option>
+							<option>Salem</option>
+						</select>
+					</td>
+					<td>
+						<button>Edit</button> 
+					</td>
+				</tr>
+				
+				<tr>
+					<td><input type="submit"></td>
+				</tr>	
+				
+				
+			</table>
+			
+		</form>
+		
+		<div id="edit-dialog" title="choose  Location">
+		
+			<select id="dialog">
+				<option>Chennai</option>
+				<option>Madurai</option>
+				<option>Coimbatore</option>
+				<option>Trichy</option>
+				<option>Erode</option>
+				<option>Salem</option>
+			</select>
+		
+		</div>	
+			
+		<script>
+		
+			$("document").ready(function()
+			{
+				$("button").click(function()
+				{
+					$("#edit-dialog").dialog(
+					{
+						modal : true,
+						buttons:
+						{
+							"save":function()
+							{
+								var nlocation=$("#dialog").val();
+								$("#location").val(nlocation);
+								$(this).dialog("close");
+							},
+							
+							"Cancel" :function()
+							{
+								$(this).dialog("close");
+							}
+						}
+					});
+				});
+				
+			});
+			
+		</script>	
+		
+	</body>
+	
+</html>

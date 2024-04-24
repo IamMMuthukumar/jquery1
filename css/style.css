@@ -1,0 +1,21 @@
+h1
+{
+	font-size : 30px;
+	color : red;
+	background-color : yellow;
+	margin : 2px solid black;
+	padding : 10px;
+	text-align:center;
+	
+}
+
+td
+{
+	font-size:20px;
+	padding : 10px;
+}
+
+#edit-dialog
+{
+	display:none;
+}
